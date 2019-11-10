@@ -87,6 +87,22 @@ h1 {
   }
 }
 
+.wedding-party {
+  display: flex;
+  flex-direction: row;
+}
+
+.wedding-party-member {
+  display: flex;
+  flex-direction: column;
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius:50%;
+    object-fit: cover;
+  }
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301

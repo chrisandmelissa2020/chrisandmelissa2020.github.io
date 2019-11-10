@@ -28,6 +28,12 @@ h1 { font-size: 2.5rem; }
 
 .hero-view h1 { font-size: 4rem; }
 
+.wedding-party { display: flex; flex-direction: row; }
+
+.wedding-party-member { display: flex; flex-direction: column; }
+
+.wedding-party-member img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
+
 /* Remove text-shadow in selection highlight: https://twitter.com/miketaylr/status/12228805301 Vendor-prefixed and regular ::selection selectors cannot be combined: https://stackoverflow.com/a/16982510/7133471 Customize the background color to match your design. */
 ::-moz-selection { background: #b3d4fc; text-shadow: none; }
 

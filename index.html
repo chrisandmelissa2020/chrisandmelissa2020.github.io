@@ -14,7 +14,21 @@ layout: default
 <section>
   <h1>Wedding party</h1>
   <h2>Bride's party</h2>
+    <div class="wedding-party">
+      {% for member in site.data.bride-party %}
+        {% include wedding_member.html
+	  member=member
+        %}
+      {% endfor %}
+    </div>
   <h2>Groom's party</h2>
+    <div class="wedding-party">
+      {% for groom-member in site.data.groom-party %}
+        {% include wedding_member.html
+	  member=groom-member
+        %}
+      {% endfor %}
+    </div>
 </section>
 
 <section>
