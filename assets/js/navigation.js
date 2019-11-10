@@ -7,6 +7,9 @@ function hackyPathNormalizer(string) {
   return withoutFileType;
 }
 
+function updateUrl(url) {
+  window.history.pushState({}, '', url);
+}
 
 function hideOldContentAndMaybeShowPrefetchedNewContent(url) {
   let match = null;
@@ -15,6 +18,7 @@ function hideOldContentAndMaybeShowPrefetchedNewContent(url) {
     if(hackyPathNormalizer($(el).data('path')) == hackyPathNormalizer(url)) {
      match = el;
      $(match).show();
+     updateUrl(url);
     } else {
       $(el).hide();
     }
@@ -32,6 +36,7 @@ async function fetchAndDisplayNewContent(url) {
   console.log("typeof", typeof tempdom);
   var content = $('.content', tempdom);
   $('main').prepend(content);
+  updateUrl(url);
 }
 
 function interceptClickEvent(e) {
