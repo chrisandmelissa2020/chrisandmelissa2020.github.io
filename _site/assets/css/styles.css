@@ -2,9 +2,31 @@
 /* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
 /* What follows is the result of much research on cross-browser styling. Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal, Kroc Camen, and the H5BP dev community and team. */
 /* ========================================================================== Base styles: opinionated defaults ========================================================================== */
-html { color: #222; font-size: 1em; line-height: 1.4; }
+html { color: #222; font-size: 1rem; line-height: 1.4; }
 
-body { background-color: red; }
+body { background-color: white; font-family: 'Archivo Narrow', sans-serif; }
+
+a { color: navy; text-decoration: none; }
+
+a:hover { color: black; }
+
+section { text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; }
+
+h1 { font-size: 2.5rem; }
+
+/*============================== Navigation ===============================*/
+.nav-container { display: flex; position: fixed; background-color: transparent; justify-content: center; align-items: center; padding: 20px; width: 100%; }
+
+.nav-container nav { display: flex; }
+
+.nav-container nav a { padding: 10px; text-transform: uppercase; }
+
+.content section:first-child:not(.hero-view) { padding-top: 100px; }
+
+/*============================== Main page ===============================*/
+.hero-view { height: 100vh; color: white; background-image: url("/assets/images/engagement/1.jpg"); background-size: cover; }
+
+.hero-view h1 { font-size: 4rem; }
 
 /* Remove text-shadow in selection highlight: https://twitter.com/miketaylr/status/12228805301 Vendor-prefixed and regular ::selection selectors cannot be combined: https://stackoverflow.com/a/16982510/7133471 Customize the background color to match your design. */
 ::-moz-selection { background: #b3d4fc; text-shadow: none; }
