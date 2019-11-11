@@ -90,16 +90,23 @@ h1 {
 .wedding-party {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .wedding-party-member {
   display: flex;
+  align-items: center;
   flex-direction: column;
   img {
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     border-radius:50%;
     object-fit: cover;
+  }
+  .wedding-member-description {
+    padding: 30px;
+    width: 200px;
   }
 }
 
