@@ -55,6 +55,23 @@ h1 {
   Navigation
 *===============================*/
 
+#luxbar {
+  position: fixed;
+  background: transparent;
+  width: 100%;
+
+  .luxbar-menu-center {
+    .luxbar-navigation {
+      justify-content: center
+    }
+  }
+
+  .luxbar-checkbox:checked ~ .luxbar-menu {
+    background-color: rgba(224, 224, 224, 1);
+  }
+
+}
+
 /*
 .nav-container {
   display:flex;

@@ -26,6 +26,10 @@ function hideOldContentAndMaybeShowPrefetchedNewContent(url) {
   return !!match;
 }
 
+function closeNavigationMenu() {
+  $('.luxbar-checkbox').prop('checked', false);
+}
+
 async function fetchAndDisplayNewContent(url) {
   const response = await fetch(url);
   const str = await response.clone().text();
@@ -39,6 +43,15 @@ async function fetchAndDisplayNewContent(url) {
   updateUrl(url);
 }
 
+async function clientSideNavigate(url) {
+  const prefetched = hideOldContentAndMaybeShowPrefetchedNewContent(url);
+  if (!prefetched) {
+    await fetchAndDisplayNewContent(url);
+  }
+  $(window).scrollTop(0);
+  closeNavigationMenu();
+}
+
 function interceptClickEvent(e) {
   var href;
   var target = e.target || e.srcElement;
@@ -46,13 +59,8 @@ function interceptClickEvent(e) {
     href = target.getAttribute('href');
     var hostname = target.hostname;
     if (location.hostname === hostname || !hostname.length) {
-      if (true) { // TODO: Account for right clicks.
-        e.preventDefault();
-	const prefetched = hideOldContentAndMaybeShowPrefetchedNewContent(href);
-	if (!prefetched) {
-	  fetchAndDisplayNewContent(href);
-	}
-      }
+      e.preventDefault();
+      clientSideNavigate(href);      
     }
   }
 }

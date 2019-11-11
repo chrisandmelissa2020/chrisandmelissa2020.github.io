@@ -17,6 +17,12 @@ section { text-align: center; display: flex; flex-direction: column; justify-con
 h1 { font-size: 2.5rem; }
 
 /*============================== Navigation ===============================*/
+#luxbar { position: fixed; background: transparent; width: 100%; }
+
+#luxbar .luxbar-menu-center .luxbar-navigation { justify-content: center; }
+
+#luxbar .luxbar-checkbox:checked ~ .luxbar-menu { background-color: #e0e0e0; }
+
 /* .nav-container { display:flex; position:fixed; background-color: transparent; justify-content: center; align-items: center; padding: 20px; width: 100%; .nav-list { display: flex; a { padding: 10px; text-transform: uppercase; } } } */
 .content section:first-child:not(.hero-view) { padding-top: 100px; }
 
@@ -137,7 +143,7 @@ textarea { resize: vertical; }
 
 .luxbar-checkbox:not(:checked) ~ .luxbar-menu { overflow: hidden; height: 58px; }
 
-.luxbar-checkbox:checked ~ .luxbar-menu { transition: height 0.6s ease; height: 100vh; overflow: auto; }
+.luxbar-checkbox:checked ~ .luxbar-menu { transition: height 0.6s ease, background-color 500ms linear; height: 100vh; overflow: auto; }
 
 .dropdown { position: relative; height: auto; min-height: 58px; }
 
@@ -177,9 +183,9 @@ textarea { resize: vertical; }
 
 .luxbar-menu-dark .luxbar-hamburger span, .luxbar-menu-dark .luxbar-hamburger span::before, .luxbar-menu-dark .luxbar-hamburger span::after { background-color: #fff; }
 
-.luxbar-menu-light, .luxbar-menu-light .dropdown ul { background-color: #e0e0e0; color: #212121; }
+.luxbar-menu-light, .luxbar-menu-light .dropdown ul { background-color: rgba(224, 224, 224, 0.5); color: #212121; }
 
-.luxbar-menu-light .active, .luxbar-menu-light .luxbar-item:hover { background-color: #bdbdbd; }
+.luxbar-menu-light .active, .luxbar-menu-light .luxbar-item:hover { background-color: rgba(189, 189, 189, 0.5); }
 
 .luxbar-menu-light .luxbar-hamburger span, .luxbar-menu-light .luxbar-hamburger span::before, .luxbar-menu-light .luxbar-hamburger span::after { background-color: #212121; }
 
