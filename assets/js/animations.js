@@ -1,5 +1,5 @@
 function initSmoothScroll() {
-  $("a").on('click', function(event) {
+/*  $("a").on('click', function(event) {
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
       // Prevent default anchor click behavior
@@ -18,7 +18,7 @@ function initSmoothScroll() {
         window.location.hash = hash;
       });
     } // End if
-  });
+  });*/
 }
 
 export function setUp() {

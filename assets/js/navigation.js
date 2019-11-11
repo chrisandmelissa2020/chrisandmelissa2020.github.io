@@ -42,41 +42,55 @@ async function fetchAndDisplayNewContent(url) {
   console.log("typeof", typeof tempdom);
   var content = $('.content', tempdom);
   $('main').prepend(content);
+  addNavigationClickInterceptors(content);
   updateUrl(url);
 }
 
-async function clientSideNavigate(url) {
+function scrollToAnchor(hash) {
+  // Using jQuery's animate() method to add smooth page scroll
+  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+  $('html, body').animate({
+    scrollTop: $(hash).offset().top
+  }, 800, function(){
+   
+  // Add hash (#) to URL when done scrolling (default click behavior)
+  window.location.hash = hash;
+  }); 
+}
+
+async function clientSideNavigate(url, hash) {
   const prefetched = hideOldContentAndMaybeShowPrefetchedNewContent(url);
   if (!prefetched) {
     await fetchAndDisplayNewContent(url);
   }
-  $(window).scrollTop(0);
+  if (hash) { 
+    scrollToAnchor(hash);
+  } else {
+    $(window).scrollTop(0);
+  }
   closeNavigationMenu();
 }
 
-function interceptClickEvent(e) {
-  var href;
-  var target = e.target || e.srcElement;
-  if (target.tagName !== 'A') return;
-  href = target.getAttribute('href');
-  if (href.startsWith('#')) return;
-  var hostname = target.hostname;
-  if (location.hostname === hostname || !hostname.length) {
+function interceptClickEvent(e, anchor) {
+  const href = anchor.getAttribute('href');
+  if (href && href.startsWith('#')) { 
+    console.log("scrolling to local anchor");
     e.preventDefault();
-    clientSideNavigate(href);      
+    scrollToAnchor(href);
+  }
+  else if (location.hostname === anchor.hostname || 
+	  !anchor.hostname.length) {
+    clientSideNavigate(href, anchor.hash);      
   }
 }
 
 // By intercepting clicks with a valid href
 // rather than doing nav completely client-side,
 // we allow people to still right-click to open in new tab.
-function addNavigationClickInterceptors() {
-  //listen for link click events at the document level
-  if (document.addEventListener) {
-    document.addEventListener('click', interceptClickEvent);
-  } else if (document.attachEvent) {
-    document.attachEvent('onclick', interceptClickEvent);
-  }
+function addNavigationClickInterceptors(context) {
+  $("a", context).on('click', function(evt) {
+    interceptClickEvent(evt, this);
+  });
 }
 
 
