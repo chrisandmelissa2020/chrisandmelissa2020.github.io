@@ -3,8 +3,10 @@ function hackyPathNormalizer(string) {
   const withoutSlash = splitBySlash[1] || splitBySlash[0];
   const splitByPeriod = withoutSlash.split('.');
   const withoutFileType = splitByPeriod[0];
-  console.log("normalized", withoutFileType);
-  return withoutFileType;
+  const splitByHashtag = withoutFileType.split('#');
+  const withoutAnchor = splitByHashtag[0];
+  console.log("normalized", withoutAnchor);
+  return withoutAnchor;
 }
 
 function updateUrl(url) {
@@ -55,13 +57,13 @@ async function clientSideNavigate(url) {
 function interceptClickEvent(e) {
   var href;
   var target = e.target || e.srcElement;
-  if (target.tagName === 'A') {
-    href = target.getAttribute('href');
-    var hostname = target.hostname;
-    if (location.hostname === hostname || !hostname.length) {
-      e.preventDefault();
-      clientSideNavigate(href);      
-    }
+  if (target.tagName !== 'A') return;
+  href = target.getAttribute('href');
+  if (href.startsWith('#')) return;
+  var hostname = target.hostname;
+  if (location.hostname === hostname || !hostname.length) {
+    e.preventDefault();
+    clientSideNavigate(href);      
   }
 }
 
