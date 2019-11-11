@@ -73,9 +73,15 @@ async function clientSideNavigate(url, hash) {
 
 function interceptClickEvent(e, anchor) {
   const href = anchor.getAttribute('href');
+
+  if (location.hostname !== anchor.hostname) {
+    return;
+  }
+
+  e.preventDefault();
+  
   if (href && href.startsWith('#')) { 
     console.log("scrolling to local anchor");
-    e.preventDefault();
     scrollToAnchor(href);
   }
   else if (location.hostname === anchor.hostname || 
