@@ -7,7 +7,8 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow&display=swap" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">-->
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400&display=swap" rel="stylesheet">
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="/assets/images/icons/icon.png">
   <link rel="stylesheet" href="/assets/css/normalize.css">
@@ -22,15 +23,22 @@
   <![endif]-->
 
   <!-- Navigation bar -->
-  <div class="nav-container">
-    <nav>
-      <a href="/">Home</a>
-      <a href="/wedding.html">The wedding</a>
-      <a href="/travel.html">Travel</a>
-      <a href="/rsvp.html">RSVP</a>
-      <a href="/faq.html">FAQs</a>
-    </nav>
-  </div>
+  <header id="luxbar" class="luxbar-fixed">
+    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+    <div class="luxbar-menu luxbar-menu-left luxbar-menu-material-indigo">
+        <ul class="luxbar-navigation">
+            <li class="luxbar-header">
+            </li>
+            <li class="luxbar-item"><a href="/">Home</a></li>
+            <li class="luxbar-item"><a href="/wedding.html">The wedding</a></li>
+            <li class="luxbar-item"><a href="/travel.html">Travel</a></li>
+            <li class="luxbar-item"><a href="/rsvp.html">RSVP</a></li>
+            <li class="luxbar-item"><a href="/faq.html">FAQs</a></li>
+        </ul>
+    </div>
+</header>
+
+
  
   <main>
     <div class="content" data-path="/-"> 

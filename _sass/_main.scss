@@ -19,7 +19,15 @@ html {
 
 body {
   background-color: white;
-  font-family: 'Archivo Narrow', sans-serif;
+  /*font-family: 'Montserrat', sans-serif;*/
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+ letter-spacing: 0.1em;
+ text-transform: uppercase;
 }
 
 a {
@@ -47,6 +55,7 @@ h1 {
   Navigation
 *===============================*/
 
+/*
 .nav-container {
   display:flex;
   position:fixed;
@@ -56,7 +65,7 @@ h1 {
   padding: 20px;
   width: 100%;
 
-  nav {
+  .nav-list {
     display: flex;
       a {
         padding: 10px;
@@ -64,7 +73,7 @@ h1 {
       }
   }
 }
-
+*/
 .content {
   section:first-child {
     &:not(.hero-view) {
