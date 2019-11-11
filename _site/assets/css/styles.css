@@ -35,7 +35,17 @@ h1 { font-size: 2.5rem; }
 /*============================== Main page ===============================*/
 .hero-view { height: 100vh; color: white; background-image: url("/assets/images/engagement/1.jpg"); background-size: cover; }
 
-.hero-view h1 { font-size: 4rem; }
+.hero-view h1 { font-size: 4rem; padding: 20px; }
+
+.bouncing-arrow { animation-name: bouncing-arrow; animation-duration: 2s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
+
+@keyframes bouncing-arrow { from { transform: translate(-50%, 0); }
+  65% { transform: translate(-50%, 15px); }
+  to { transform: translate(-50%, 0); } }
+
+.down-arrow-container { color: #fff; font-size: 30px; position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); height: 30px; width: 30px; }
+
+.down-arrow-container svg { fill: white; }
 
 .wedding-party { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; }
 
