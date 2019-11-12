@@ -6,4 +6,5 @@ $(document).ready(function(){
   console.log("HELLOW WORLD");
   navigation.init();
   animations.setUp();
+  AOS.init();
 });
