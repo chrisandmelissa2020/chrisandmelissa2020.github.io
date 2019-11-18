@@ -52,8 +52,9 @@ ul {
 }
 
 section {
-      text-align: center;
+  text-align: center;
   display: flex;
+  position:relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
