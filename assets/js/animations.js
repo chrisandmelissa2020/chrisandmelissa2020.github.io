@@ -24,17 +24,18 @@ function initSmoothScroll() {
 
 function initHeroAnimation() {
   console.log("initing hero animation");
-  var masks = container.querySelectorAll("mask > path");
-  mask.forEach((path) => {
+  var masks = document.querySelectorAll("mask > path");
+  masks.forEach((path) => {
     var length = path.getTotalLength();
     path.style.strokeDasharray = length;
     path.style.strokeDashoffset = length;
     path.style.stroke='white';
+    path.style.animationName='brush';
   });
 }
 
 export function setUp() {
-  initHeroAnimation();
   console.log("setting up");
+  initHeroAnimation();
   initSmoothScroll();
 }
