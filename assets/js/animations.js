@@ -32,6 +32,18 @@ function initHeroAnimation() {
     path.style.stroke='white';
     path.style.animationName='brush';
   });
+  var leftOrnaments = document.querySelectorAll(".sunray.left");
+  var otherOrnaments = document.querySelectorAll(".sunray:not(.left)");
+  var iDots = document.querySelectorAll(".i-dot");
+  otherOrnaments.forEach((path) => {
+    path.style.animationName='sunray-bottom-and-right';
+  });
+  leftOrnaments.forEach((path) => {
+    path.style.animationName='sunray-left';
+  });
+  iDots.forEach((path) => {
+   path.style.animationName='idot';
+  });
 }
 
 export function setUp() {
