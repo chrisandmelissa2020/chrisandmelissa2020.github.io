@@ -55,12 +55,17 @@ ul {
 
 section {
   text-align: center;
+  min-height: 100vh;
   display: flex;
   position:relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: $section-padding;
+
+  p {
+    max-width: 1000px;
+  }
 }
 
 h1 {
@@ -93,6 +98,8 @@ h1 {
 .content {
   position: absolute;
   z-index: 1;
+  width: 100%;
+  height: 100%;
   section:first-child {
     &:not(.hero-view) {
       padding-top: 100px;
@@ -107,7 +114,7 @@ h1 {
 .hero-view {
   height: calc(100vh - (2 * #{$section-padding}));
   color: white; 
-  background-image: url("/assets/images/engagement/1.jpg");
+  background-image: url("/assets/images/engagement/pano.JPG");
   background-size: cover;
   h1 {
     font-size: 4rem;
@@ -121,7 +128,9 @@ h1 {
 
 }
 
-
+/*==========================
+  Hero svg
+============================*/
 $anim-delay: 400ms;
 
 mask path {
@@ -220,6 +229,11 @@ $ornament-paths-list: #mask-ornament-m-path, #mask-ornament-c-top-path, #mask-or
   100% { stroke-dashoffset: 0; }
 }
 
+
+/*==========================
+  Hero down arrow
+============================*/
+
 .bouncing-arrow {
   animation-name: bouncing-arrow;
   animation-duration: 2s;
@@ -252,6 +266,15 @@ $ornament-paths-list: #mask-ornament-m-path, #mask-ornament-c-top-path, #mask-or
     fill: white;
   }
 }
+
+/*==========================
+  Hero svg
+============================*/
+#hug {
+  background-image: url("/assets/images/engagement/rock.JPG");
+  background-size: cover;
+}
+
 
 .wedding-party {
   display: flex;
