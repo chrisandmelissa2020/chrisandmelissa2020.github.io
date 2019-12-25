@@ -55,7 +55,10 @@ ul {
 
 section {
   text-align: center;
-  min-height: 100vh;
+  min-height: 0;
+  &.tall {
+    min-height:100vh;
+  }
   display: flex;
   position:relative;
   flex-direction: column;
@@ -114,7 +117,7 @@ h1 {
 .hero-view {
   height: calc(100vh - (2 * #{$section-padding}));
   color: white; 
-  background-image: url("/assets/images/engagement/pano.JPG");
+  background-image: url("/assets/images/engagement/hero.jpg");
   background-size: cover;
   h1 {
     font-size: 4rem;
