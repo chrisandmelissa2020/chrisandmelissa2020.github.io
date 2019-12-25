@@ -12,6 +12,8 @@
    ========================================================================== */
 
 $section-padding: 40px;
+$small-breakpoint: 320px;
+$large-breakpoint: 1200px;
 
 html {
   color: #222;
@@ -33,7 +35,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  font-size: 2.5rem;
   padding-top: 50px;
+  @media screen and (max-width: $small-breakpoint) {
+    font-size: 1.5rem;
+  }
 }
 
 h2 {
@@ -69,10 +75,6 @@ section {
   p {
     max-width: 1000px;
   }
-}
-
-h1 {
- font-size: 2.5rem;
 }
 
 /*==============================
